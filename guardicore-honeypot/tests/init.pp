@@ -1,0 +1,1 @@
+class {'guardicore-honeypot': }
