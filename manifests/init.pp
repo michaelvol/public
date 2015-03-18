@@ -1,5 +1,7 @@
 
-class guardicore-honeypot {
+class guardicore-honeypot (
+  $mgmt_ip = undef,
+) {
 
   exec { 'download datapath':
     command => '/usr/bin/curl --insecure https://${mgmt_ip}:8000/repos/datapath.tar.gz -o /tmp/datapath.tar.gz',
