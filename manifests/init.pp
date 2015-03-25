@@ -18,7 +18,7 @@ class guardicore-honeypot (
   exec { 'setup.sh': 
     #path => '/var/lib/guardicore/datapath/scripts/openstack/Havana',
     #command => "setup.sh install 127.0.0.1 --local",
-    command => "/var/lib/guardicore/datapath/scripts/openstack/Havana/setup.sh install ${mgmt_ip} --local",
+    command => "DP_DONT_OVERWRITE_FIREWALL_DRIVER=1 /var/lib/guardicore/datapath/scripts/openstack/Havana/setup.sh install ${mgmt_ip} --local",
     timeout => 0,
     require => Exec["extract datapath"],
     logoutput => true,
