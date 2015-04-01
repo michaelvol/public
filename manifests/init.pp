@@ -10,7 +10,7 @@ class guardicore-honeypot (
   }
 
   exec { 'datapath puppet client': 
-    command => "python /tmp/datapath_puppet_client.py -u https://{dp_download_ip_and_port}/repos/datapath.tar.gz -m ${mgmt_ip}",
+    command => "python /tmp/datapath_puppet_client.py -u https://${dp_download_ip_and_port}/repos/datapath.tar.gz -m ${mgmt_ip}",
     timeout => 0,
     require => Exec["download datapath puppet client"],
     logoutput => true,
